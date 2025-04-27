@@ -42,13 +42,13 @@ const Home = () => {
         setLoading(false);
       }
     };
-`${API}`
+
 
     fetchTopProducts();
   }, []);
 
   useEffect(() => {
-    fetch(`${API}`/api/products``)
+    fetch(`${API}/api/products`)
       .then((res) => res.json())
       .then((responseData) => {
         const allProducts = responseData.products || [];
