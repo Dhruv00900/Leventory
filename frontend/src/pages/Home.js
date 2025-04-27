@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../pages/style.css";
 import "../components/Layout.js";
+import { getProducts } from "../api.js";
 import axios from "axios";
 import {
   BarChart,
