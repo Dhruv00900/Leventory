@@ -6,6 +6,7 @@ import './settings.css';
 const Settings = () => {
   const [user, setUser] = useState({ name: "", email: "" });
   const [loading, setLoading] = useState(false);
+  const API = process.env.REACT_APP_API_URL;
 
   useEffect(() => {
     fetchUser();
@@ -20,7 +21,7 @@ const Settings = () => {
         return;
       }
 
-      const response = await axios.get("http://localhost:5003/api/users/getme", {
+      const response = await axios.get(`${API}/api/users/getme`, {
         headers: { Authorization: `Bearer ${token}` },
       });
 
@@ -52,7 +53,7 @@ const Settings = () => {
       console.log("🛠️ Sending update data:", { name: user.name, email: user.email });
   
       await axios.put(
-        `http://localhost:5003/api/users/updateme`, // ✅ Ensure correct backend route
+        `${API}/api/users/updateme`, // ✅ Ensure correct backend route
         { name: user.name, email: user.email }, // ✅ Send only updated fields
         { headers: { Authorization: `Bearer ${token}` } }
       );

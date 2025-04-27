@@ -14,6 +14,7 @@ const Register = () => {
   const emailRegex = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
   const nameRegex = /^[A-Za-z]+(?:[ '-][A-Za-z]+)*$/;
   const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?#&^])[A-Za-z\d@$!%*?#&^]{6,}$/;
+  const API = process.env.REACT_APP_API_URL;
 
   const validateFullName = (value) => {
     const trimmed = value.trim();
@@ -55,7 +56,7 @@ const Register = () => {
     setLoading(true);
     try {
       const response = await axios.post(
-        "http://localhost:5003/api/auth/register",
+        `${API}/api/auth/register`,
         { name, email, password },
         {
           headers: {

@@ -28,11 +28,12 @@ function Products() {
   const [totalPages, setTotalPages] = useState(1);
   const limit = 5; // Number of products per page
   const navigate = useNavigate();
+  const API = process.env.REACT_APP_API_URL;
 
 useEffect(() => {
   const fetchSuppliers = async () => {
     try {
-      const response = await axios.get("http://localhost:5003/api/suppliers");
+      const response = await axios.get(`${API}/api/suppliers`);
       setSuppliers(response.data); // Assuming API returns { suppliers: [...] }
     } catch (error) {
       console.error("Error fetching suppliers:", error);
@@ -40,7 +41,7 @@ useEffect(() => {
   };
   const fetchCategories = async () => {
     try{
-      const response = await axios.get("http://localhost:5003/api/categories");
+      const response = await axios.get(`${API}/api/categories`);
       setCategories(response.data); // Assuming API returns { categories: [...] }
     }catch(error){
       console.error("Error fetching categories:", error);
@@ -56,7 +57,7 @@ useEffect(() => {
   // ✅ Fetch Products
   const fetchProducts = useCallback(async () => {
     try {
-      const response = await axios.get(`http://localhost:5003/api/products`, {
+      const response = await axios.get(`${API}/api/products`, {
         params: {
           page: currentPage,
          limit:limit,

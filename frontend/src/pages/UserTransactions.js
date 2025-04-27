@@ -14,6 +14,7 @@ const UserTransactions = () => {
   const [transactions, setTransactions] = useState([]);
   const [selectedBill, setSelectedBill] = useState(null);
   const billRef = useRef();
+  const API = process.env.REACT_APP_API_URL;
 
   const fetchTransactions = async () => {
     try {
@@ -21,7 +22,7 @@ const UserTransactions = () => {
       if (!token) return toast.error("❌ No token found!");
 
       const { data } = await axios.get(
-        `http://localhost:5003/api/bills/generated-by/${generatedBy}`,
+        `${API}/api/bills/generated-by/${generatedBy}`,
         {
           headers: { Authorization: `Bearer ${token}` },
         }
@@ -36,7 +37,7 @@ const UserTransactions = () => {
   const openBill = async (id) => {
     try {
       const token = localStorage.getItem("token");
-      const { data } = await axios.get(`http://localhost:5003/api/bills/${id}`, {
+      const { data } = await axios.get(`${API}/api/bills/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setSelectedBill(data);

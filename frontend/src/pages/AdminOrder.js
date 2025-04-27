@@ -11,6 +11,7 @@ const AdminOrder = () => {
   const [newOrder, setNewOrder] = useState({ productName: "", quantity: "", price: "", shippingAddress: "" });
   const [selectedSuppliers, setSelectedSuppliers] = useState({}); // Store selected supplier for each order
   const [suppliers, setSuppliers] = useState([]); // List of suppliers
+  const API = process.env.REACT_APP_API_URL;
 
   const token = localStorage.getItem("token");
   const user = JSON.parse(localStorage.getItem("user"));
@@ -31,7 +32,8 @@ const AdminOrder = () => {
     setLoading(true);
     setError("");
     try {
-      const { data } = await axios.get("http://localhost:5003/api/purchase-orders", {
+      const { data } = await axios.get(`${API}/api
+/purchase-orders`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setOrders(data);
@@ -45,7 +47,8 @@ const AdminOrder = () => {
 
   const fetchSuppliers = async () => {
     try {
-      const { data } = await axios.get("http://localhost:5003/api/supplierManage", {
+      const { data } = await axios.get(`${API}/api
+/supplierManage`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setSuppliers(data); // Assuming your backend provides suppliers list
@@ -56,7 +59,8 @@ const AdminOrder = () => {
 
   const handleStatusChange = async (id, status) => {
     try {
-      await axios.put(`http://localhost:5003/api/purchase-orders/${id}`, { status }, {
+      await axios.put(`${API}/api
+/purchase-orders/${id}`, { status }, {
         headers: { Authorization: `Bearer ${token}` },
       });
       toast.success(`Order ${status}`);
@@ -120,7 +124,8 @@ const AdminOrder = () => {
     }
 
     try {
-      const res = await axios.post("http://localhost:5003/api/purchase-orders", newOrder, {
+      const res = await axios.post(`${API}/api
+/purchase-orders`, newOrder, {
         headers: { Authorization: `Bearer ${token}` },
       });
       toast.success("Order created successfully");

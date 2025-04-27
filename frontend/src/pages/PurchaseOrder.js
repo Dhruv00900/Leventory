@@ -15,12 +15,13 @@ const PurchaseOrder = () => {
   });
   const [products, setProducts] = useState([]); // Ensure it's an array
   const [isNewProduct, setIsNewProduct] = useState(false); // Toggle for new or existing product
+  const API = process.env.REACT_APP_API_URL;
 
   // Fetch user orders
   const fetchOrders = async () => {
     const token = localStorage.getItem("token");
     try {
-      const res = await axios.get("http://localhost:5003/api/purchase-orders/my-orders", {
+      const res = await axios.get(`${API}/api/purchase-orders/my-orders`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setUserOrders(res.data);
@@ -33,7 +34,7 @@ const PurchaseOrder = () => {
   const fetchProducts = async () => {
     const token = localStorage.getItem("token");
     try {
-      const res = await axios.get("http://localhost:5003/api/products", {
+      const res = await axios.get(`${API}/api/products`, {
         headers: { Authorization: `Bearer ${token}` },
       });
 
@@ -79,7 +80,7 @@ const PurchaseOrder = () => {
     }
 
     try {
-      await axios.post("http://localhost:5003/api/purchase-orders", order, {
+      await axios.post(`${API}/api/purchase-orders`, order, {
         headers: { Authorization: `Bearer ${token}` },
       });
       toast.success("Order created!");
@@ -103,7 +104,7 @@ const PurchaseOrder = () => {
 
     try {
       await axios.delete(
-        `http://localhost:5003/api/purchase-orders/cancel/${orderId}`,
+        `${API}/api/purchase-orders/cancel/${orderId}`,
         {
           headers: { Authorization: `Bearer ${token}` },
         }

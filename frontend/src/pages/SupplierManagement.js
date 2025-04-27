@@ -7,10 +7,11 @@ const SupplierManagement = ({ currentUser }) => {
   const [formData, setFormData] = useState({ name: "", contact: "", email: "", address: "" });
   const [formErrors, setFormErrors] = useState({});
   const [editingId, setEditingId] = useState(null);
+  const API = process.env.REACT_APP_API_URL;
 
   const fetchSuppliers = async () => {
     try {
-      const res = await axios.get("http://localhost:5003/api/supplierManage");
+      const res = await axios.get(`${API}/api/supplierManage`);
       setSuppliers(res.data);
     } catch (err) {
       console.error("Error fetching suppliers:", err);

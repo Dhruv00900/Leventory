@@ -5,13 +5,14 @@ import axios from "axios";
 const BillPreview = () => {
   const { id } = useParams();
   const [bill, setBill] = useState(null);
+  const API = process.env.REACT_APP_API_URL;
 
   useEffect(() => {
     const fetchBill = async () => {
       try {
         const token = localStorage.getItem("token");
         const { data } = await axios.get(
-          `http://localhost:5003/api/bills/${id}`,
+          `${API}/api/bills/${id}`,
           {
             headers: {
               Authorization: `Bearer ${token}`,

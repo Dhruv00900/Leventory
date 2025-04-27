@@ -27,11 +27,12 @@ const Home = () => {
   const [inventoryValue, setInventoryValue] = useState(0);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
+  const API = process.env.REACT_APP_API_URL;
 
   useEffect(() => {
     const fetchTopProducts = async () => {
       try {
-        const response = await axios.get("http://localhost:5003/api/dashboard/top-products", {
+        const response = await axios.get(`${API}/api/dashboard/top-products`, {
           headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
         });
         setTopProducts(response.data);
@@ -41,12 +42,13 @@ const Home = () => {
         setLoading(false);
       }
     };
+`${API}`
 
     fetchTopProducts();
   }, []);
 
   useEffect(() => {
-    fetch("http://localhost:5003/api/products")
+    fetch(`${API}`/api/products``)
       .then((res) => res.json())
       .then((responseData) => {
         const allProducts = responseData.products || [];
@@ -65,7 +67,7 @@ const Home = () => {
 
     const token = localStorage.getItem("token");
 
-    fetch("http://localhost:5003/api/dashboard/daily-sales-count", {
+    fetch(`${API}/api/dashboard/daily-sales-count`, {
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
@@ -122,7 +124,7 @@ const Home = () => {
 
   const fetchProfit = async () => {
     const token = localStorage.getItem("token");
-    const { data } = await axios.get("http://localhost:5003/api/dashboard/profit-summary", {
+    const { data } = await axios.get(`${API}/api/dashboard/profit-summary`, {
       headers: { Authorization: `Bearer ${token}` },
     });
     
@@ -133,7 +135,7 @@ const Home = () => {
   const fetchInventoryValue = async () => {
     const token = localStorage.getItem("token");
     try {
-      const response = await axios.get("http://localhost:5003/api/dashboard/inventory-value", {
+      const response = await axios.get(`${API}/api/dashboard/inventory-value`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       

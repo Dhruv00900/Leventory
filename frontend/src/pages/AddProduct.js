@@ -6,6 +6,7 @@ import { Select } from "antd";
 
 const { Option } = Select; // Ensure Option is extracted
 
+const API = process.env.REACT_APP_API_URL;
 
 function AddProduct({ addProduct}) {
   const [categories, setCategories] = useState([]); 
@@ -30,7 +31,7 @@ function AddProduct({ addProduct}) {
   // Fetch categories from backend
   const fetchCategories = async () => {
     try {
-      const response = await axios.get("http://localhost:5003/api/categories");
+      const response = await axios.get(`${API}/api/categories`);
       setCategories(response.data);
     } catch (error) {
       console.error("❌ Error fetching categories:", error);
@@ -63,7 +64,7 @@ function AddProduct({ addProduct}) {
     }
 
     try {
-      const response = await axios.post("http://localhost:5003/api/categories", { name: newCategory });
+      const response = await axios.post(`${API}/api/categories`, { name: newCategory });
       setCategories([...categories, response.data]);
       setProduct((prev) => ({ ...prev, category: response.data._id })); 
       setNewCategory(""); 
@@ -80,7 +81,7 @@ function AddProduct({ addProduct}) {
   useEffect(() => {
     const fetchSuppliers = async () => {
       try {
-        const response = await axios.get("http://localhost:5003/api/supplierManage"); // API endpoint to get all suppliers
+        const response = await axios.get(`${API}/api/supplierManage`); // API endpoint to get all suppliers
         setSuppliers(response.data);
       } catch (error) {
         console.error("Error fetching suppliers:", error);
@@ -122,7 +123,7 @@ function AddProduct({ addProduct}) {
     });
 
     try {
-      const response = await axios.post("http://localhost:5003/api/products", formData, {
+      const response = await axios.post(`${API}/api/products`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
           Authorization: `Bearer ${token}`,

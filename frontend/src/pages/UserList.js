@@ -14,6 +14,7 @@ const UserList = () => {
   const [sortField, setSortField] = useState("");
   const [sortOrder, setSortOrder] = useState("asc");
   const [selectedRole, setSelectedRole] = useState("");
+  const API = process.env.REACT_APP_API_URL;
 
   useEffect(() => {
     fetchUsers();
@@ -31,7 +32,7 @@ const UserList = () => {
         return;
       }
 
-      const response = await axios.get("http://localhost:5003/api/users", {
+      const response = await axios.get(`${API}/api/users`, {
         headers: { Authorization: `Bearer ${token}` },
       });
 
@@ -53,7 +54,7 @@ const UserList = () => {
       const updatedStatus = !currentStatus;
 
       await axios.put(
-        `http://localhost:5003/api/users/${userId}/toggle-access`,
+        `${API}/api/users/${userId}/toggle-access`,
         { isEnabled: updatedStatus },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -80,7 +81,7 @@ const UserList = () => {
         return;
       }
 
-      await axios.delete(`http://localhost:5003/api/users/${userId}`, {
+      await axios.delete(`${API}/api/users/${userId}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
 

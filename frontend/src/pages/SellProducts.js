@@ -20,11 +20,12 @@ const SellProducts = () => {
   const [loading, setLoading] = useState(true);
   const [bill, setBill] = useState(null);
   const billRef = useRef();
+  const API = process.env.REACT_APP_API_URL;
 
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const res = await axios.get('http://localhost:5003/api/products');
+        const res = await axios.get(`${API}/api/products`);
         if (Array.isArray(res.data.products)) {
           setProducts(res.data.products);
         } else throw new Error('Invalid products format');
@@ -140,7 +141,7 @@ const SellProducts = () => {
 
     try {
       const response = await axios.post(
-        'http://localhost:5003/api/sell',
+        `${API}/api/sell`,
         {
           customerName,
           customerPhone,

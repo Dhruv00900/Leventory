@@ -14,6 +14,7 @@ const BillHistory = () => {
   const [sortOrder, setSortOrder] = useState("desc");
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 5;
+  const API = process.env.REACT_APP_API_URL;
 
   const handleViewBill = (bill) => {
     setSelectedBill(bill);
@@ -28,7 +29,7 @@ const BillHistory = () => {
           return;
         }
 
-        const res = await axios.get("http://localhost:5003/api/bills/me/user", {
+        const res = await axios.get(`${API}/api/bills/me/user`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
