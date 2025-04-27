@@ -1,0 +1,134 @@
+/* Login Page Styles with Glassmorphism */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-size: cover;
+  }
+  
+  /* Glassmorphism Box */
+  .login-box {
+    width: 100%;
+    max-width: 400px;
+    padding: 25px;
+    background: rgba(255, 255, 255, 0.15); /* Off-white transparent */
+    backdrop-filter: blur(12px); /* Blurry glass effect */
+    -webkit-backdrop-filter: blur(12px); /* Safari support */
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border */
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
+  }
+  
+  /* Icon */
+  .icon-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+  
+  .icon {
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+  }
+  
+  /* Title */
+  .title {
+    font-size: 22px;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 15px;
+  }
+  
+  /* Input Fields */
+  .input-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .input-field {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+    border-radius: 8px;
+    font-size: 16px;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+  
+  .input-field::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+  }
+  
+  /* Buttons */
+  .button-container {
+    margin-top: 15px;
+  }
+  
+  .btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: 0.3s;
+  }
+  
+  .primary {
+    background: rgba(255, 255, 255, 0.8);
+    color: black;
+  }
+  
+  .primary:hover {
+    background: rgba(255, 255, 255, 1);
+  }
+  
+  .secondary {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .secondary:hover {
+    background: rgba(255, 255, 255, 0.3);
+  }
+  
+  .google-icon {
+    width: 18px;
+    height: 18px;
+    margin-right: 8px;
+  }
+  
+  /* Signup Text */
+  .register-text {
+    color: white;
+    font-size: 14px;
+    margin-top: 10px;
+  }
+  
+  .link {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+  }
+  
+  .link:hover {
+    text-decoration: underline;
+  }
+  
+  .form-container p {
+    color: white;
+}

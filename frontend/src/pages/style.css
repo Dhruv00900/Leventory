@@ -1,0 +1,279 @@
+
+/*sidebar*/
+/* Sidebar Container */
+.sidebar-container {
+    background-color: #f8f9fa; /* Light gray background */
+    height: 100vh; /* Full height */
+    width: 250px; /* Sidebar width */
+    position: fixed; /* Fixed position */
+    top: 40px;
+    left: 0;
+    padding-top: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    
+  }
+
+  /* Sidebar Elements */
+  .sidebar-elements {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Spacing between items */
+    padding: 10px;
+  }
+  
+  /* Sidebar Links */
+  .sidebar-elements a {
+    text-decoration: none;
+  }
+  
+  /* Sidebar Buttons (Div inside Link) */
+  .sidebar-elements a > div {
+    background-color:#1b5271; /* Primary color */
+    padding: 12px 20px;
+    color: white;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 500;
+    transition: background-color 0.3s ease, padding-left 0.3s ease;
+  }
+  
+  /* Hover Effect */
+  .sidebar-elements a:hover > div {
+    background-color:#1b5271;
+    padding-left: 25px; /* Smooth shift effect */
+    transition: 0.3s ease;
+  }
+  
+  /* Active Sidebar Item */
+  .sidebar-elements a.active > div {
+    background-color:#1b5271;
+  }
+  
+  /* Logout Button */
+  .sidebar-elements a:last-child > div {
+    background-color: #ffffff; /* Red for logout */
+  }
+  
+  .sidebar-elements a:last-child:hover > div {
+    background-color: #b02a37;
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  .sidebar-container {
+    margin-top: 0px;
+    background-color: #000000;
+    
+    display: flex;
+    margin-top: 10px;
+    flex-direction: column;
+    width: 200px;
+    border-radius: 0px 20px 20px 0px;
+    padding: 10px;
+    z-index: 1000;
+    position: fixed;
+  }
+  
+  .sidebar-elements {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Makes sure this section takes up full available height */
+    
+  }
+  
+  .sidebar-elements > a > div {
+    background-color: #000000;
+    padding: 10px;
+    color: #fff;
+    border-radius: 20px;
+    margin-top: 5px;
+    justify-content: center;
+    align-items: center;
+    display: flex; /* Ensures text is centered */
+    transition: background-color 0.3s ease, padding-left 0.3s ease;
+  }
+  
+  .sidebar-elements > a:hover > div {
+    background-color: #1b5271;
+    padding-left: 15px; /* Creates a hover effect with padding shift */
+  }
+  .sidebar-elements > a.active {
+    background-color: #1b5271; /* Highlight selected item */
+    color: #ffffff; /* Ensure text remains visible */
+    font-weight: bold;
+  }
+  
+  /* Push last two elements to the bottom */
+  .sidebar-elements > div:nth-last-child(2),
+  .sidebar-elements > div:last-child {
+    margin-top: 5px;
+    background-color: #000000; /* Adjust text color */
+    
+    color: #ffffff; /* Adjust text color */
+  
+  }
+  
+  .sidebar-elements > div:nth-last-child(2) {
+    margin-top:130px;
+  }
+  
+  
+  
+  .sidebar-elements > div:hover {
+    background-color: white;
+    padding-inline-start: 1px;/* Adjusted padding for better effect */
+    border-radius: 20px;
+    border: 1px solid white;
+    transform: scale(1.02);
+  }
+  .sidebar-elements > div::after{
+  background-color: white;
+  }
+  
+  .search-bar {
+    position: absolute;  /* Positions it relative to navbar-container */
+    top: 3px; /* Adjust as needed */
+    left: 800px; /* Adjust as needed */
+}
+
+.search-bar input[type="text"] {
+    border-radius: 20px;
+    border: 2px solid #000000;
+    font-size: 15px;
+    padding-left: 10px;
+}
+
+.search-bar:hover {
+    transform: scale(1.04);
+    transition: transform 0.5s ease-in-out 0.1s;
+}
+
+/* Navbar styles */
+.navbar-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    background-color: #000000;
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+    height: 49px; /* Adjust as needed */
+    padding: 10px;
+}
+
+/* Logo/title */
+.navbar-container > h1 {
+    color: white;
+    margin-left:10px; /* Adjust based on search-bar */
+    margin-bottom: 5px;
+}
+
+/* User section */
+/* User Profile Container */
+.nav-user {
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Center align */
+  margin-left: auto; /* Push to the right */
+  padding-right: 20px; /* Add some space from the right edge */
+}
+
+/* User Image */
+.nav-user img {
+  width: 35px; /* Adjust size */
+  height: 35px;
+  border-radius: 100%; /* Makes it round */
+ /* Ensures the image fills the space */
+  border: 2px solid white; /* Optional border */
+}
+
+/* User Name */
+.nav-user  {
+  color: white;
+  font-size: 10px;
+  margin-top: 0px;/* Space between image and name */
+  text-align: center; /* Center text */
+}
+
+
+
+
+ 
+
+
+
+  .sidebar-container button {
+    color: #000000;
+    background: #d9beee;
+}
+.sidebar-container button:hover{
+    color: #ffffff;
+    background: #000000;
+}
+
+
+  /* Remove arrows/spinners from number input fields */
+  input[type="number"] {
+    -moz-appearance: textfield; /* Firefox */
+    appearance: textfield; /* Standard */
+  }
+  
+  input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  table {
+    width: 75%;
+    border-collapse: collapse;
+    margin-top:0px;
+    font-size: 18px;
+    text-align: left;
+    position: relative;
+}
+th, td {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+th {
+    background-color: #000000;
+    color: white;
+}
+img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+.status {
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+}
+.available { background-color: green; }
+.out-of-stock { background-color: red; }
+.coming-soon { background-color: orange; }

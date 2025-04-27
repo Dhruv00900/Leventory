@@ -1,0 +1,85 @@
+.add-product {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    max-width: 500px; /* Limit width for better form alignment */
+    margin: auto; /* Center the form */
+}
+
+.add-product h1 {
+    margin-bottom: 20px;
+    text-align: center; /* Center the heading */
+}
+
+.add-product form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Spacing between form elements */
+}
+
+.add-product label {
+    font-weight: bold; /* Make labels more readable */
+}
+
+.add-product input,
+.add-product textarea,
+.add-product select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%; /* Make inputs responsive */
+    max-width: 100%; /* Prevent overflow */
+}
+
+.add-product textarea {
+    resize: vertical; /* Allow resizing only vertically */
+    min-height: 100px; /* Better text area visibility */
+}
+
+.add-product button {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #000000;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    align-self: flex-start; /* Prevent full-width button */
+    transition: background-color 0.3s ease;
+}
+
+.add-product button:hover {
+    background-color: #0056b3;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+     /* Center vertically */
+    height: 38px;           /* Full viewport height */
+  }
+  
+  /* Button styling */
+  .import-excel-button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  
+  .import-excel-button:hover {
+    background-color: #45a049; /* Darker green on hover */
+  }
+  
+  .import-excel-button:active {
+    background-color: #3e8e41; /* Even darker green on click */
+  }
+  

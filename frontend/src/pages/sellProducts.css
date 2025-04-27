@@ -1,0 +1,110 @@
+/* Container for sell products */
+.sell-products-container {
+  max-width: 850px;
+  margin: 20px auto;
+  padding: 25px;
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden; /* Ensure content stays within the container */
+}
+
+/* Inner container for layout consistency */
+.sell-products {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+/* Form styling */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Input styling for better alignment */
+.sell-products input,
+.sell-products select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  transition: border-color 0.2s ease;
+}
+
+.sell-products input:focus,
+.sell-products select:focus {
+  border-color: #000000;
+  outline: none;
+}
+
+/* Bill section */
+.bill {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  overflow-x: auto; /* Allow horizontal scrolling for large content */
+  word-wrap: break-word; /* Ensure text breaks within table */
+}
+
+/* Table styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  table-layout: fixed; /* Ensures cells do not overflow */
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #ddd;
+  word-wrap: break-word; /* Ensure long words break */
+}
+
+th {
+  background-color: #000000;
+  color: white;
+}
+
+td {
+  background-color: #fafafa;
+}
+
+/* Buttons */
+button[type="button"],
+button[type="submit"] {
+  background-color: #000000;
+  color: white;
+  border: none;
+  padding: 10px;
+  height: 36px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s, transform 0.1s;
+}
+
+button:hover {
+  background-color: #333333;
+  transform: scale(1.02);
+}
+
+/* Hide print buttons */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+  }
+}
