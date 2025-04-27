@@ -24,7 +24,7 @@ app.use(express.json());
   
 app.use(
   cors({
-    origin: "https://leventory-bew4.onrender.com", 
+    origin: "https://algariinventory.vercel.app", 
     credentials: true, 
   })
 );
