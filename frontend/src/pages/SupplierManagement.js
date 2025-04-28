@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Swal from "sweetalert2";
 
-const SupplierManagement = ({ currentUser }) => {
+const suppliersment = ({ currentUser }) => {
   const [suppliers, setSuppliers] = useState([]);
   const [formData, setFormData] = useState({ name: "", contact: "", email: "", address: "" });
   const [formErrors, setFormErrors] = useState({});
@@ -11,7 +11,7 @@ const SupplierManagement = ({ currentUser }) => {
 
   const fetchSuppliers = async () => {
     try {
-      const res = await axios.get(`${API}/api/supplierManage`);
+      const res = await axios.get(`${API}/api/suppliers`);
       setSuppliers(res.data);
     } catch (err) {
       console.error("Error fetching suppliers:", err);
@@ -179,4 +179,4 @@ const SupplierManagement = ({ currentUser }) => {
   );
 };
 
-export default SupplierManagement;
+export default suppliersment;
