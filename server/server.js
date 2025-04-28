@@ -25,7 +25,7 @@ app.use(express.static('public'));
   
 app.use(
   cors({
-    origin: "*", // This will allow requests from any origin
+    origin: "https://leventory.vercel.app", // This will allow requests from any origin
     credentials: true, // Keep credentials if required
   })
 );
