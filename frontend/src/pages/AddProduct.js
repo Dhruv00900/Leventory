@@ -81,7 +81,7 @@ function AddProduct({ addProduct}) {
   useEffect(() => {
     const fetchSuppliers = async () => {
       try {
-        const response = await axios.get(`${API}/api/supplierManage`); // API endpoint to get all suppliers
+        const response = await axios.get(`${API}/api/suppliers`); // API endpoint to get all suppliers
         setSuppliers(response.data);
       } catch (error) {
         console.error("Error fetching suppliers:", error);
