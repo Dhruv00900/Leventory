@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Swal from "sweetalert2";
 
-const suppliersment = ({ currentUser }) => {
+const SupplierManagement = ({ currentUser }) => {
   const [suppliers, setSuppliers] = useState([]);
   const [formData, setFormData] = useState({ name: "", contact: "", email: "", address: "" });
   const [formErrors, setFormErrors] = useState({});
@@ -179,4 +179,4 @@ const suppliersment = ({ currentUser }) => {
   );
 };
 
-export default suppliersment;
+export default SupplierManagement;
