@@ -5,7 +5,7 @@ export const ProductContext = createContext();
 
 export const ProductProvider = ({ children }) => {
   const [products, setProducts] = useState([]); // Store product list
-
+  const API = process.env.REACT_APP_API_URL;
   // ✅ Fetch products from backend
   useEffect(() => {
     fetchProducts();
@@ -13,7 +13,7 @@ export const ProductProvider = ({ children }) => {
 
   const fetchProducts = async () => {
     try {
-      const response = await fetch("http://localhost:5003/api/products");
+      const response = await fetch(`${API}/api/products`);
       const data = await response.json();
 
       if (!response.ok) throw new Error(data.message || "Failed to fetch products");
@@ -30,7 +30,7 @@ export const ProductProvider = ({ children }) => {
       const token = localStorage.getItem("token"); // Get token for auth
       if (!token) throw new Error("Unauthorized: No token found");
 
-      const response = await fetch("http://localhost:5003/api/products", {
+      const response = await fetch(`${API}/api/products`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -57,7 +57,7 @@ export const ProductProvider = ({ children }) => {
       const token = localStorage.getItem("token");
       if (!token) throw new Error("Unauthorized");
   
-      const response = await fetch("http://localhost:5003/api/bills", {
+      const response = await fetch(`${API}/api/bills`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

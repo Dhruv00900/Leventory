@@ -7,10 +7,10 @@ function Sidebar() {
   const navigate = useNavigate();
   const location = useLocation(); // Get current route location
   const user = JSON.parse(localStorage.getItem("user"));
-
+  const API = process.env.REACT_APP_API_URL;
   const handleLogout = async () => {
     try {
-      await fetch("http://localhost:5003/api/auth/logout", {
+      await fetch(`${API}/api/auth/logout`, {
         method: "POST",
         credentials: "include",
       });
