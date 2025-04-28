@@ -48,7 +48,7 @@ const AdminOrder = () => {
   const fetchSuppliers = async () => {
     try {
       const { data } = await axios.get(`${API}/api
-/supplierManage`, {
+/suppliers`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setSuppliers(data); // Assuming your backend provides suppliers list

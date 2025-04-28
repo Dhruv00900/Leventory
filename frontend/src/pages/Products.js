@@ -211,7 +211,7 @@ const updateProduct = async () => {
 
     // ✅ Send updated product data to the backend
          await axios.put(
-      `http://localhost:5003/api/products/${editProduct._id}`,
+      `${API}/api/products/${editProduct._id}`,
       updatedProduct,
       {
         headers: { Authorization: `Bearer ${token}` },
@@ -260,7 +260,7 @@ const handleDelete = async (productId) => {
 
     if (!confirmDelete.isConfirmed) return; // ✅ Check for confirmation
 
-    await axios.delete(`http://localhost:5003/api/products/${productId}`, {
+    await axios.delete(`${API}/api/products/${productId}`, {
       headers: { Authorization: `Bearer ${token}` },
     });
 
