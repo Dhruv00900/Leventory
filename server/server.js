@@ -24,7 +24,10 @@ app.use(express.json());
   
 app.use(
   cors({
-    origin: "https://algariinventory.vercel.app", 
+    origin: [
+      "https://inventory-drab-nine.vercel.app",
+      "http://localhost:3000"
+    ],
     credentials: true, 
   })
 );
