@@ -15,6 +15,7 @@ const SupplierManagement = ({ currentUser }) => {
       setSuppliers(res.data);
     } catch (err) {
       console.error("Error fetching suppliers:", err);
+      Swal.fire("Error", "Failed to fetch suppliers", "error");
     }
   };
 
@@ -40,7 +41,6 @@ const SupplierManagement = ({ currentUser }) => {
   const handleChange = (e) => {
     const { name, value } = e.target;
     const error = validateField(name, value);
-
     setFormData({ ...formData, [name]: value });
     setFormErrors({ ...formErrors, [name]: error });
   };
@@ -72,6 +72,7 @@ const SupplierManagement = ({ currentUser }) => {
       setEditingId(null);
       fetchSuppliers();
     } catch (err) {
+      console.error("Error during add/update:", err);
       Swal.fire("Error", err.response?.data?.message || "Something went wrong", "error");
     }
   };
@@ -97,6 +98,7 @@ const SupplierManagement = ({ currentUser }) => {
         Swal.fire("Deleted!", "Supplier has been deleted.", "success");
         fetchSuppliers();
       } catch (err) {
+        console.error("Error deleting supplier:", err);
         Swal.fire("Error", "Failed to delete supplier", "error");
       }
     }
