@@ -52,7 +52,7 @@ app.use("/api/products",productRoutes);
 app.use("/api/users",userRoutes);
 app.use("/api/purchase-orders", purchaseRoutes);
 app.use("/api/categories", categoryRoutes)
-app.use("/api/supplierManage", supplierRoutes);
+app.use("/api/suppliers", supplierRoutes);
 app.use("/api", sellRoutes);
 app.use("/api/bills", billRoutes);
 app.use("/api/dashboard",dashboardRoutes);
