@@ -42,7 +42,7 @@ function App() {
           <Route path="/purchase-order" element={<PurchaseOrder />} />
           <Route path="/suppliers" element={<AdminOrder />} />
           <Route path="/bills" element={<BillHistory/>} /> 
-          <Route path="/supplierManage" element={<SupplierManagement/>} />
+          <Route path="/suppliers" element={<SupplierManagement/>} />
 
        
                   

@@ -80,7 +80,7 @@ function Sidebar() {
         ) : null}
 
         {user?.role === "admin" ? (
-          <Link to="/supplierManage" className={location.pathname === "/supplierManage" ? "active" : ""}>
+          <Link to="/suppliers" className={location.pathname === "/suppliers" ? "active" : ""}>
             <div>Suppliers</div>
           </Link>
         ) : null}
