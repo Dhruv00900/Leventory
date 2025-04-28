@@ -61,10 +61,10 @@ const SupplierManagement = ({ currentUser }) => {
 
     try {
       if (editingId) {
-        await axios.put(`http://localhost:5003/api/supplierManage/${editingId}`, formData);
+        await axios.put(`${API}/api/suppliers/${editingId}`, formData);
         Swal.fire("Success", "Supplier updated successfully", "success");
       } else {
-        await axios.post("http://localhost:5003/api/supplierManage", formData);
+        await axios.post(`${API}/api/suppliers`, formData);
         Swal.fire("Success", "Supplier added successfully", "success");
       }
       setFormData({ name: "", contact: "", email: "", address: "" });
@@ -93,7 +93,7 @@ const SupplierManagement = ({ currentUser }) => {
 
     if (confirm.isConfirmed) {
       try {
-        await axios.delete(`http://localhost:5003/api/supplierManage/${id}`);
+        await axios.delete(`${API}/api/suppliers/${id}`);
         Swal.fire("Deleted!", "Supplier has been deleted.", "success");
         fetchSuppliers();
       } catch (err) {
