@@ -25,14 +25,11 @@ app.use(express.static('public'));
   
 app.use(
   cors({
-    origin: [
-      "https://inventory-drab-nine.vercel.app",
-      "https://inventory-apl71yt46-dhruvranpariya2004-gmailcoms-projects.vercel.app",
-      "http://localhost:3000"
-    ],
-    credentials: true, 
+    origin: "*", // This will allow requests from any origin
+    credentials: true, // Keep credentials if required
   })
 );
+
 
 
 
